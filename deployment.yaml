@@ -41,7 +41,8 @@ spec:
     spec:
       containers:
       - name: clouddemo-netcore
-        image: mohdwazid/k8s-docker-repo
+        image: mohdwazid/k8s-docker-repo:latest
+        imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8080
         resources:
