@@ -22,4 +22,3 @@ steps:
     repository: 'mohdwazid/k8s-docker-repo'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: 24.1
