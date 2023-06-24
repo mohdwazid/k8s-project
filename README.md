@@ -1,0 +1,1 @@
+This is a simple nginx application to be used during k8s project demonstration
