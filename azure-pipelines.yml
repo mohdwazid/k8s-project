@@ -10,13 +10,9 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: echo Welcome to My First Azure Pipeline
+  displayName: 'My First Azure Pipeline'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
 - task: DockerInstaller@0
   inputs:
     dockerVersion: '17.09.0-ce'
@@ -26,8 +22,3 @@ steps:
     repository: 'k8s-docker-repo'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-- task: Docker@2
-  inputs:
-    containerRegistry: 'mohdwazid-dockerhub'
-    command: 'start'
-    container: 'k8s-nginx'
