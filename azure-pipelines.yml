@@ -19,6 +19,7 @@ steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'mohdwazid-dockerhub'
-    repository: 'k8s-docker-repo'
+    repository: 'mohdwazid/k8s-docker-repo'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tags: 24.1
