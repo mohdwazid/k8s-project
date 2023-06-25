@@ -10,8 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Welcome to My First Azure Pipeline
-  displayName: 'My First Azure Pipeline'
 
 - task: DockerInstaller@0
   inputs:
@@ -22,7 +20,7 @@ steps:
     containerRegistry: 'mohdwazid-dockerhub'
     repository: 'mohdwazid/k8s-docker-repo'
     command: 'buildAndPush'
-    Dockerfile: 'Dockerfile'
+    Dockerfile: '**/Dockerfile'
     tags: latest
 
 - task: KubernetesManifest@1
