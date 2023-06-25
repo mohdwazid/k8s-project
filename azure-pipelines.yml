@@ -31,4 +31,4 @@ steps:
     connectionType: 'kubernetesServiceConnection'
     kubernetesServiceConnection: 'svc-k8s-cluster'
     namespace: 'default'
-    manifests: 'deployment.yaml'
+    manifests: 'k8s/deployment.yaml'
