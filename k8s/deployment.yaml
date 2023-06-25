@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,14 +15,7 @@ spec:
     spec:
       containers:
       - name: k8s-nginx
-        image: mohdwazid/k8s-docker-repo:latest
+        image: paulbouwer/hello-kubernetes:1.5
         imagePullPolicy: Always
         ports:
-          - containerPort: 80
-        resources:
-          limits:
-            cpu: 200m
-            memory: 128Mi
-          requests:
-            cpu: 100m
-            memory: 64Mi
+          - containerPort: 8080

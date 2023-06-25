@@ -1,12 +1,13 @@
+---
 apiVersion: v1
 kind: Service              # 1
 metadata:
-  name: lb-k8-nginx
+  name: k8-nginx
 spec: 
   type: LoadBalancer
   ports:
   - port: 80               # 3
     protocol: TCP          # 4
-    targetPort: 80         # 5
+    targetPort: 8080         # 5
   selector:                # 6
     app: k8-nginx       # 7
