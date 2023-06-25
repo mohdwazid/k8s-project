@@ -12,14 +12,15 @@ pool:
 steps:
 
 - task: DockerInstaller@0
+  displayName: Installing Docker 17
   inputs:
     dockerVersion: '17.09.0-ce'
 
 - task: Docker@2
-  displayName: Pushing to DockerHub
   inputs:
     containerRegistry: 'mohdwazid-dockerhub'
     repository: 'mohdwazid/k8s-docker-repo'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-    tags: 2.0
+    addPipelineData: false
+    addBaseImageData: false
