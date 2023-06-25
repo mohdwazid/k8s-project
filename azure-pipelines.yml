@@ -23,6 +23,7 @@ steps:
     repository: 'mohdwazid/k8s-docker-repo'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tag: latest
     addPipelineData: false
     addBaseImageData: false
 
