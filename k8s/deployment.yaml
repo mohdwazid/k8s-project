@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dep-k8s-nginx
+  name: k8s-nginx
 spec:
   replicas: 3
   selector:
@@ -17,7 +17,7 @@ spec:
         image: mohdwazid/k8s-docker-repo:latest
         imagePullPolicy: IfNotPresent
         ports:
-          - containerPort: 80
+          - containerPort: 8080
         resources:
           limits:
             cpu: 200m
