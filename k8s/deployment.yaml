@@ -1,52 +1,27 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: clouddemo-netcore
-spec:
-  ports:
-  - port: 80
-    targetPort: 8080
-    protocol: TCP
-    name: http
-  selector:
-    app: clouddemo-netcore
-  type: NodePort
-
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: clouddemo-netcore
-spec:
-  defaultBackend:
-    service:
-      name: clouddemo-netcore
-      port:
-        number: 80
-
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: clouddemo-netcore
+  name: dep-k8s-nginx
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
-      app: clouddemo-netcore
+      app: k8s-nginx
   template:
     metadata:
       labels:
-        app: clouddemo-netcore
+        app: k8s-nginx
     spec:
       containers:
-      - name: clouddemo-netcore
+      - name: k8s-nginx
         image: mohdwazid/k8s-docker-repo:latest
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 8080
         resources:
           limits:
-            memory: 512Mi
-          requests:
+            cpu: 200m
             memory: 128Mi
+          requests:
+            cpu: 100m
+            memory: 64Mi
