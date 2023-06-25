@@ -15,7 +15,7 @@ spec:
       containers:
       - name: k8s-nginx
         image: mohdwazid/k8s-docker-repo:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
           - containerPort: 8080
         resources:
